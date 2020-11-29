@@ -72,7 +72,7 @@ class InAppProductQueryRequest: NSObject, InAppProductRequest, SKProductsRequest
     }
     
     private func performCallback(_ results: RetrieveResults) {
-        DispatchQueue.main.async {
+        SwiftyStoreKit.defaultCompletionQueue.async {
             self.callback(results)
         }
     }

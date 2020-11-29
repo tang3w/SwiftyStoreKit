@@ -107,7 +107,7 @@ class InAppReceiptVerificator: NSObject {
      
         validator.validate(receiptData: receiptData) { result in
             
-            DispatchQueue.main.async {
+            SwiftyStoreKit.defaultCompletionQueue.async {
                 completion(result)
             }
         }

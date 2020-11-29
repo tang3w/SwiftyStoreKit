@@ -74,7 +74,7 @@ class InAppReceiptRefreshRequest: NSObject, SKRequestDelegate {
         performCallback(.error(e: error))
     }
     private func performCallback(_ result: ResultType) {
-        DispatchQueue.main.async {
+        SwiftyStoreKit.defaultCompletionQueue.async {
             self.callback(result)
         }
     }

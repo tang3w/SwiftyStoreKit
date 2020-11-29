@@ -32,6 +32,12 @@ public class SwiftyStoreKit {
 
     fileprivate let receiptVerificator: InAppReceiptVerificator
 
+    static var defaultCompletionQueue: DispatchQueue = .main
+
+    public static func setUp(defaultCompletionQueue: DispatchQueue) {
+        self.defaultCompletionQueue = defaultCompletionQueue
+    }
+
     init(productsInfoController: ProductsInfoController = ProductsInfoController(),
          paymentQueueController: PaymentQueueController = PaymentQueueController(paymentQueue: SKPaymentQueue.default()),
          receiptVerificator: InAppReceiptVerificator = InAppReceiptVerificator()) {
